@@ -1,0 +1,398 @@
+﻿DEVELOPING A DEEP LEARNING BASED TOMATO PLANT DISES
+BY
+IDOWU OLUWASEMILORE PRECIOUS
+22CD009369/2201385
+
+A PROJECT REPORT SUBMITTED TO THE
+DEPARTMENT OF COMPUTER SCIENCE, COLLEGE OF
+PURE AND APPLIED SCIENCES, LANDMARK
+UNIVERSITY.
+IN PARTIAL FULFILLMENT OF THE REQUIREMENT
+FOR THE AWARD OF
+BACHELOR OF SCIENCE DEGREE IN COMPUTER
+SCIENCE.
+JANUARY, 2026
+
+DECLARATION
+     
+I, Idowu  Oluwasemilore Precious hereby declare that the research project submitted for evaluation for the award of Bachelor of Science (BSc.) degree in Computer Science was carried out by me.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CERTIFICATION
+This is to certify that Idowu Oluwasemilore Precious with matriculation number 22CD009369 has carried out this research project in partial fulfillment of the requirement for the award of Bachelor of Science Degree in Computer Science in the College of Pure and Applied Sciences, Landmark University.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DEDICATION
+This work is dedicated to the Almighty God, My family as a whole, the family of Mr. 
+and Mrs. Idowu for their assistance all through my project journey and everyone that leads me in any capacity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ACKNOWLEDGEMENT
+I would like to express my heartfelt gratitude to the Almighty God for His countless graces and blessings throughout my project journey. I deeply appreciate the unwavering love, encouragement, and support from my family during this period. My sincere thanks go to the Head of the Department of Computer Science at Landmark University, Prof. Mr A.A Adebiyi, for his kind words of inspiration after and before my internship. I am also grateful to my lecturer, Mr. Alfa Peter (Project Supervisor).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TABLE OF CONTENTS
+TITLE PAGE ...................................................................................... I 
+DECLARATION............................................................................................................ II 
+CERTIFICATION....................................................................................................... III 
+DEDICATION..............................................................................................................IV
+ACKNOWLEDGEMENT..............................................................................................V 
+ABSTRACT..................................................................................................................VI
+TABLE OF CONTENTS............................................................................................VII
+TITLE PAGE ...................................................................................... I 
+DECLARATION............................................................................................................ II 
+CERTIFICATION........................................................................................................ III 
+DEDICATION.............................................................................................................. IV 
+ACKNOWLEDGEMENT..............................................................................................V 
+ABSTRACT...................................................................................................................VI 
+LIST OF TABLES........................................................................................................ X 
+LIST OF FIGURES.......................................................................................................XI 
+CHAPTER ONE............................................................................................................ 1 
+INTRODUCTION......................................................................................................... 1 
+1.1 BACKGROUND OF STUDY...................................................................................1 
+1.2 STATEMENT OF PROBLEM................................................................................ 1 
+1.3 AIM AND OBJECTIVES....................................................................................... 4 
+1.5 SIGNIFICANCE OF STUDY.................................................................................. 4  
+1.6 SCOPE OF STUDY............................................................................................... 8 
+1.7 DEFINITION OF TERMS...................................................................................... 8
+CHAPTER TWO........................................................................................................11
+
+CHAPTER ONE
+INTRODUCTION
+1.1 BACKGROUND OF STUDY
+Agriculture is a fundamental pillar of economic development and food security across the world, particularly in developing countries where a large proportion of the population depends on farming for survival. The sector provides food, employment, raw materials for industries, and income generation for rural households. However, agricultural productivity continues to face serious challenges, among which plant diseases remain one of the most significant threats. Plant diseases negatively affect crop growth, reduce yield quantity and quality, and result in substantial economic losses for farmers and stakeholders along the agricultural value chain.
+Tomato (Solanum lycopersicum) is one of the most widely cultivated and economically important vegetable crops globally. It is highly valued due to its nutritional content, including vitamins A, C, and E, minerals, antioxidants such as glycogen, and its extensive use in households and food-processing industries. Tomatoes are consumed fresh or processed into products such as paste, juice, ketchup, and sauces, making them a vital component of food systems worldwide. Due to its high demand and commercial value, tomato farming contributes significantly to income generation for small-scale and commercial farmers alike.
+Despite its importance, tomato cultivation is highly vulnerable to numerous plant diseases caused by fungi, bacteria, viruses, and pests. Common tomato diseases include early blight, late blight, leaf mold, septoria leaf spot, bacterial spot, bacterial speck, tomato mosaic virus, and tomato yellow leaf curl virus. These diseases often manifest through visible symptoms on tomato leaves such as discoloration, spots, wilting, curling, and necrosis. If not detected and treated at an early stage, tomato diseases can spread rapidly across farms, leading to severe yield losses and, in extreme cases, total crop failure.
+Traditionally, the identification and diagnosis of tomato plant diseases have relied on manual inspection by farmers or agricultural extension officers. This conventional approach has several limitations. First, it requires expert knowledge, which is often unavailable or inaccessible to many farmers, especially those in rural areas. Second, visual inspection is time-consuming, subjective, and prone to human error, as different diseases may exhibit similar visual symptoms. Third, large-scale tomato farms make manual monitoring impractical and inefficient. As a result, misdiagnosis is common, leading farmers to apply incorrect or excessive agrochemicals, which increases production costs, harms the environment, and poses health risks to consumers.
+The rapid advancement of information and communication technology has opened new possibilities for addressing these challenges in agriculture. Image processing and artificial intelligence (AI) techniques have emerged as powerful tools for automating plant disease detection. Image processing enables the analysis of visual information from plant leaf images by extracting key features such as color variations, texture patterns, and shape irregularities that are indicative of disease symptoms. These features provide valuable information about the health status of tomato plants and form the basis for intelligent disease diagnosis systems.
+In recent years, deep learning, a sub-field of machine learning, has demonstrated remarkable success in solving complex image analysis problems. Convolutional Neural Networks (CNNs), in particular, have proven highly effective in image classification and object recognition tasks due to their ability to automatically learn hierarchical and discriminative features directly from raw images. Unlike traditional machine learning methods that rely on handcrafted feature extraction, CNN-based models learn relevant features autonomously, making them more robust and accurate for plant disease detection.
+The application of deep learning to tomato disease detection has gained increasing attention among researchers due to the availability of large annotated image datasets and improved computational power. Public datasets such as PlantVillage have enabled the training and evaluation of deep learning models for various tomato diseases. In addition, the widespread use of smartphones equipped with high-resolution cameras has made it possible to capture tomato leaf images directly from farms, creating opportunities for real-time and user-friendly disease diagnosis systems.
+However, despite these technological advancements, several challenges remain in developing reliable tomato disease detection models. Variations in lighting conditions, background clutter, leaf orientation, disease severity levels, and environmental factors can significantly affect image quality and model performance. Many existing models are trained on laboratory-controlled datasets, which limits their ability to generalize to real-world farming conditions. Furthermore, deep learning models often require large datasets and high computational resources, which may restrict their deployment on mobile or low-power devices commonly used by farmers.
+In response to these challenges, there is a growing need for efficient, accurate, and robust artificial intelligence-based systems specifically designed for tomato disease detection. Such systems should be capable of accurately identifying tomato diseases from leaf images under varying environmental conditions while remaining computationally efficient and accessible to end users. An automated tomato disease detection system has the potential to assist farmers in early diagnosis, reduce crop losses, optimize pesticide usage, and support sustainable agricultural practices.
+This project focuses on the development of an artificial model for detecting diseases in tomato plants using image processing and deep learning techniques. By leveraging convolutional neural networks and appropriate image preprocessing methods, the proposed system aims to provide an automated, reliable, and cost-effective solution for early tomato disease detection. The outcome of this research is expected to contribute to the advancement of smart agriculture and precision farming by providing a technological tool that supports timely decision-making and enhances tomato crop productivity.
+In conclusion, the integration of image processing and deep learning techniques into tomato disease detection represents a promising approach to addressing one of the most pressing challenges in modern agriculture. As global food demand continues to rise due to population growth and climate change, the adoption of intelligent agricultural technologies becomes increasingly essential. This study aligns with global efforts toward sustainable agriculture by exploring the use of artificial intelligence to improve tomato plant health monitoring and ensure food security.
+1.2 STATEMENT OF PROBLEM
+Tomato production plays a vital role in ensuring food security, nutritional balance, and economic sustainability for farmers and agricultural stakeholders worldwide. Despite its importance, tomato farming continues to face serious challenges arising from the frequent occurrence of plant diseases. Tomato diseases such as early blight, late blight, bacterial spot, leaf mold, septoria leaf spot, and viral infections often lead to reduced crop yield, poor fruit quality, and significant economic losses. These challenges are further intensified in developing regions where access to timely agricultural support and diagnostic resources is limited.
+One of the major problems in tomato disease management is the reliance on traditional manual disease detection methods. Farmers typically identify diseases through visual inspection of plant leaves, a process that is highly dependent on personal experience and subjective judgment. Many tomato diseases exhibit similar visual symptoms at early stages, making accurate diagnosis difficult even for experienced farmers. As a result, diseases are often misidentified or detected too late, by which time significant damage may have already occurred. This delay in detection reduces the effectiveness of control measures and increases the likelihood of disease spread across farms.
+The lack of readily available agricultural experts and extension services further exacerbates this problem, particularly in rural and remote farming communities. Farmers in such areas may not have access to trained professionals who can provide accurate disease diagnosis and management recommendations. Consequently, farmers often resort to trial-and-error methods or rely on inaccurate information, leading to the indiscriminate use of pesticides and fungicides. This not only increases production costs but also contributes to environmental pollution, pesticide resistance, and potential health risks for consumers.
+Although recent advances in artificial intelligence and deep learning have shown promise in automating plant disease detection, several limitations persist in existing research and practical implementations. Many proposed tomato disease detection models are trained using laboratory-contro xlled datasets that do not accurately reflect real-world farming conditions. Variations in lighting, background clutter, leaf orientation, disease severity, and environmental noise significantly affect the performance of these models when deployed in real agricultural environments. This limits their reliability and practical usefulness for farmers.
+Furthermore, many existing deep learning models are computationally intensive, requiring high processing power and large memory capacity. Such requirements make it difficult to deploy these models on mobile devices or low-cost systems that are commonly accessible to farmers. As a result, the gap between research-level solutions and real-world agricultural applications remains wide.
+In addition, there is a lack of locally adaptable and user-friendly tomato disease detection systems that can provide accurate results in a timely manner. Most farmers need simple, fast, and affordable diagnostic tools that can operate with minimal technical expertise. However, current solutions often fail to meet these practical requirements, limiting their adoption at the grassroots level.
+Therefore, the core problem addressed in this study is the absence of an efficient, accurate, and accessible automated system for early detection of tomato plant diseases. There is a critical need for an intelligent tomato disease detection model that leverages image processing and deep learning techniques to overcome the limitations of manual inspection and existing automated approaches. Such a system should be capable of accurately identifying tomato diseases from leaf images, operate under varying environmental conditions, and be suitable for deployment on affordable platforms. Addressing this problem is essential for improving tomato crop health, enhancing agricultural productivity, and promoting sustainable farming practices.
+1.3 AIM AND OBJECTIVES
+Aim of the Study
+The paper's goal is to develop and evaluate a convolutional neural network that can automatically detect and classify the most common tomato leaf diseases from images, without needing expert diagnosticians. The intended benefit is helping farmers improve production and profits by enabling early intervention.
+By doing so, the project aims to provide a reliable, efficient, and cost-effective alternative to traditional manual disease identification methods.	
+The proposed system is intended to support early disease detection, which is crucial for timely intervention and effective disease management in tomato farming. Early diagnosis enables farmers to apply appropriate control measures before diseases spread extensively, thereby reducing crop losses and improving overall yield quality. Furthermore, the study aims to contribute to the growing body of knowledge in smart agriculture by demonstrating how deep learning techniques can be practically applied to solve real-world agricultural problems, particularly in resource-limited farming environments.
+Objectives of the Study
+To achieve the stated aim, the specific objectives of this study are to:
+i. Collect and prepare a dataset of tomato leaf images representing both healthy and diseased conditions.
+ii. Apply image processing techniques such as image resizing, normalization, and data augmentation to enhance image quality and dataset diversity.
+iii. Design and implement a deep learning-based model, specifically a convolutional neural network, for tomato disease classification.
+iv. Train and evaluate the performance of the proposed model using standard evaluation metrics such as accuracy, precision, recall, and F1-score.
+v. Develop an automated framework that can be adapted for real-time tomato disease detection and decision support.
+1.5 SIGNIFICANCE OF STUDY
+The significance of this study lies in its potential contributions to agriculture, technology, research, and society at large. Tomato farming plays a critical role in food security and income generation, particularly in developing countries where agriculture remains a major source of livelihood. However, tomato diseases continue to pose a serious threat to productivity due to delayed or inaccurate diagnosis. By proposing an automated tomato disease detection system, this study provides a technological solution that can significantly improve disease management practices.
+For farmers, the proposed system offers a practical tool for early and accurate disease diagnosis without requiring extensive agricultural expertise. This can help farmers make informed decisions regarding disease control measures, reduce unnecessary pesticide usage, lower production costs, and increase crop yield and profitability. The system can be particularly beneficial to small-scale farmers in rural areas who often lack access to agricultural extension services.
+From an environmental perspective, accurate disease detection can help minimize the excessive use of chemical pesticides, thereby reducing environmental pollution and health risks associated with agrochemical residues. Sustainable disease management practices promoted through intelligent systems contribute to eco-friendly farming and long-term agricultural sustainability.
+For researchers and academics, this study adds to existing literature on the application of image processing and deep learning in agriculture. It provides insights into model development, dataset preparation, and performance evaluation for tomato disease detection. Future researchers can build upon this work by improving model accuracy, incorporating additional disease classes, or extending the system to other crops.
+1.6 SCOPE OF STUDY
+This study is specifically focused on the detection and classification of diseases in tomato plants using image processing and deep learning techniques. The research is limited to the analysis of tomato leaf images, as leaf symptoms are among the most visible and commonly used indicators for diagnosing tomato diseases. The system is designed to classify selected tomato diseases based on visual features extracted from leaf images.
+The study covers the development of a deep learning-based classification model, including data preprocessing, model training, testing, and performance evaluation. The dataset used for this research may be obtained from publicly available sources or collected under controlled conditions. The scope of this study does not include the diagnosis of diseases using other plant parts such as fruits, stems, or roots.
+Furthermore, this research does not consider external factors such as soil composition, climatic conditions, irrigation practices, or pest infestation, which may also affect plant health. While the proposed model aims to achieve high accuracy under controlled and semi-controlled conditions, its performance in diverse real-field environments may vary. Deployment on mobile devices or real-time farm implementation is considered a potential future extension but is not fully addressed within the scope of this study.
+In summary, this research is confined to the application of image processing and deep learning techniques for tomato leaf disease detection and serves as a foundational framework for future enhancements and broader agricultural applications.
+Artificial Intelligence (AI)
+Artificial Intelligence refers to the simulation of human intelligence processes by computer systems and machines. In the context of this study, artificial intelligence involves the use of algorithms and computational models that enable a computer system to analyze tomato leaf images, learn patterns associated with healthy and diseased leaves, and make intelligent decisions regarding disease classification. AI allows the system to improve its performance over time as it is exposed to more data, thereby enabling automated and accurate tomato disease detection without human intervention.
+Deep Learning
+Deep learning is a subset of machine learning that uses multi-layered neural networks to model complex patterns in large datasets. It enables computers to automatically learn high-level features from raw input data, such as images, without manual feature extraction. In this research, deep learning is applied to analyze tomato leaf images by learning intricate visual patterns related to disease symptoms, thereby improving the accuracy and reliability of disease detection.
+
+Convolutional Neural Network (CNN)
+A Convolutional Neural Network is a specialized type of deep learning model designed primarily for image processing and computer vision tasks. CNNs utilize convolutional layers to extract spatial features such as edges, textures, shapes, and color patterns from images. In this study, CNNs are employed to automatically extract relevant features from tomato leaf images and classify them into healthy or diseased categories based on learned patterns.
+Image Processing
+Image processing refers to the application of computational techniques to enhance, analyze, and manipulate digital images in order to extract useful information. In this project, image processing techniques such as image resizing, normalization, noise reduction, and data augmentation are applied to tomato leaf images to improve image quality and prepare the data for effective deep learning model training.
+Plant Disease Detection
+Plant disease detection is the process of identifying and diagnosing diseases affecting plants based on visible symptoms or biological indicators. In the context of this research, plant disease detection specifically refers to the automated identification of diseases affecting tomato plants by analyzing visual symptoms present on leaf images using artificial intelligence and deep learning techniques.
+Tomato Leaf  Image
+A tomato leaf image refers to a digital photograph of a tomato plant leaf captured using a camera or smartphone. These images serve as the primary input data for the proposed system. Tomato leaf images may represent healthy or diseased conditions and are used by the deep learning model to learn disease-related visual patterns.
+Data Preprocessing
+Data preprocessing involves a set of operations applied to raw data to prepare it for analysis and model training. In this study, data preprocessing includes image resizing, normalization, noise removal, and data augmentation to ensure that tomato leaf images are consistent, high quality, and suitable for deep learning model training.
+Data Augmentation
+Data augmentation is a technique used to artificially increase the size and diversity of a dataset by applying transformations such as rotation, flipping, scaling, and cropping to existing images. In this research, data augmentation helps improve model generalization by exposing the deep learning model to variations in tomato leaf appearance under different conditions.
+Feature Extraction
+Feature extraction is the process of identifying and isolating important characteristics or patterns from data that are relevant to a specific task. In traditional machine learning, this process is manually performed; however, in this study, feature extraction is automatically carried out by convolutional neural networks, which learn discriminative features from tomato leaf images.
+
+
+Classification
+Classification refers to the process of assigning an input sample to one of several predefined categories or classes. In this project, classification involves categorizing tomato leaf images into different classes such as healthy or specific disease categories based on the output of the deep learning model.
+Model Training
+Model training is the process through which a deep learning model learns patterns from labeled data by adjusting its internal parameters to minimize prediction error. In this study, the CNN model is trained using labeled tomato leaf images so that it can accurately identify disease patterns during testing and real-world application.
+Model Evaluation
+Model evaluation refers to the assessment of a trained model's performance using predefined metrics. In this project, evaluation metrics such as accuracy, precision, recall, and F1-score are used to measure how effectively the deep learning model detects and classifies tomato plant diseases.
+Accuracy
+Accuracy is a performance metric that measures the proportion of correctly classified instances relative to the total number of instances evaluated. In the context of this study, accuracy indicates how well the proposed model correctly identifies healthy and diseased tomato leaves.
+Precision
+Precision measures the proportion of correctly predicted positive cases among all predicted positive cases. In this study, precision evaluates how accurately the model identifies a specific tomato disease without misidentifying healthy leaves as diseased.
+Recall
+Recall, also known as sensitivity, measures the proportion of actual positive cases that are correctly identified by the model. In this research, recall assesses the model's ability to detect tomato disease cases without missing affected plants.
+F1-Score
+The F1-score is a harmonic mean of precision and recall, providing a balanced measure of model performance. In this study, the F1-score is used to evaluate the effectiveness of the tomato disease detection model, particularly when dealing with class imbalance.
+Dataset
+A dataset refers to a structured collection of data used for analysis and model training. In this research, the dataset consists of labeled tomato leaf images representing various disease conditions and healthy leaves, which are used to train and evaluate the deep learning model.
+Automated System
+An automated system is a system that operates with minimal or no human intervention. In this study, the automated system refers to the proposed tomato disease detection model that automatically processes leaf images and provides disease classification results.
+Smart Agriculture
+Smart agriculture refers to the integration of advanced technologies such as artificial intelligence, machine learning, and data analytics into agricultural practices. In the context of this study, smart agriculture involves the use of deep learning-based image processing systems to improve tomato disease monitoring and management.
+Precision Agriculture
+Precision agriculture is a farming approach that uses technology to optimize agricultural inputs and management practices. This study contributes to precision agriculture by enabling targeted disease detection in tomato plants, which allows for timely and efficient disease control measures.
+
+
+
+
+
+
+
+
+
+CHAPTER TWO
+LITERATURE REVIEW
+2.1 Introduction
+This chapter presents a critical review of existing literature related to tomato disease detection using image processing and deep learning techniques. The review focuses on recent studies published between 2020 and 2026, highlighting methodologies, models, datasets, and performance outcomes. The purpose of this chapter is to establish the theoretical and empirical foundation of the study, identify research trends, and reveal gaps that justify the need for the proposed system.
+2.2 Tomato Plant Diseases and Agricultural Importance
+Tomato (Solanum lycopersicum) is one of the most widely cultivated and economically important vegetable crops worldwide. However, tomato production is significantly affected by various diseases such as early blight, late blight, septoria leaf spot, bacterial spot, and leaf mold, which reduce yield and quality (FAO, 2021). Early and accurate detection of these diseases is crucial for effective disease management and food security.
+Traditional disease diagnosis relies on visual inspection by farmers or agricultural experts, which is often time-consuming, subjective, and prone to errors, especially in large-scale farms (Polder et al., 2020). These challenges have motivated researchers to explore automated disease detection techniques based on image processing and artificial intelligence.
+2.3 Image Processing Techniques in Plant Disease Detection
+Image processing plays a foundational role in automated plant disease detection systems. Common preprocessing techniques include image resizing, color space conversion, noise reduction, contrast enhancement, and segmentation (Gandhi et al., 2021). These techniques aim to improve image quality and isolate regions of interest, such as diseased leaf areas.
+Several studies have employed segmentation methods such as thresholding, k-means clustering, and region-based segmentation to extract disease-affected regions from tomato leaf images (Singh & Misra, 2020). While traditional image processing techniques can be effective, they often require handcrafted feature extraction and are sensitive to lighting conditions and background variations.
+2.4 Deep Learning in Plant Disease Detection
+Deep learning, particularly Convolutional Neural Networks (CNNs), has emerged as a powerful tool for image-based plant disease detection. CNNs automatically learn hierarchical features from raw images, eliminating the need for manual feature engineering (LeCun et al., 2015).
+Recent studies have demonstrated the effectiveness of CNN-based models in tomato disease classification. Ouhami et al. (2020) applied transfer learning using DenseNet and VGG architectures on tomato leaf images and achieved high classification accuracy. Similarly, Trivedi et al. (2021) developed a deep CNN model that successfully classified multiple tomato leaf diseases with accuracy exceeding 98%.
+2.5 Transfer Learning Approaches
+Transfer learning has been widely adopted to improve model performance and reduce training time, especially when labeled datasets are limited. Pre-trained models such as VGG16, ResNet50, InceptionV3, MobileNet, and EfficientNet have been fine-tuned for tomato disease detection tasks (Saeed et al., 2023).
+Islam et al. (2022) reported that fine-tuning pre-trained CNN models significantly improved classification accuracy compared to training models from scratch. Lightweight models such as MobileNet and EfficientNet are particularly suitable for mobile and edge-based agricultural applications due to their reduced computational requirements (Sun et al., 2024).
+2.6 Advanced Deep Learning Models and Hybrid Approaches
+Beyond conventional CNNs, recent studies have explored hybrid and advanced architectures to enhance disease detection performance. Attention mechanisms, transformers, and ensemble models have been introduced to capture global and local features more effectively (Zhang et al., 2024).
+Sharma et al. (2025) proposed an ensemble model combining ResNet50 and MobileNetV2, achieving over 99% accuracy in tomato disease classification. Vision Transformer (ViT)-based models have also shown promising results by capturing long-range dependencies in leaf images (Shehu et al., 2025).
+Hybrid approaches that combine deep learning with traditional machine learning classifiers have further improved robustness and interpretability (Khan et al., 2024). These models often integrate handcrafted features with deep features to enhance classification performance.
+2.7 Datasets Used in Tomato Disease Detection
+Publicly available datasets such as PlantVillage have been extensively used for training and evaluating tomato disease detection models. The PlantVillage dataset contains labeled images of healthy and diseased tomato leaves under controlled conditions (Hughes & Salathé, 2015).
+Although PlantVillage has facilitated rapid research progress, several authors have noted its limitations in representing real-world farming environments (Casanova et al., 2023). Consequently, recent studies have incorporated field-acquired images to improve model generalization.
+
+2.8 Performance Evaluation Metrics
+Model performance in tomato disease detection studies is commonly evaluated using metrics such as accuracy, precision, recall, F1-score, and confusion matrices. Accuracy is the most widely reported metric; however, precision and recall provide deeper insights into model reliability, particularly in imbalanced datasets (Sokolova & Lapalme, 2009).
+Most recent studies report classification accuracies above 90%, with some achieving over 99% under controlled conditions (Islam et al., 2024). However, performance often decreases when models are tested on real-world field data.
+2.9 Limitations of Existing Studies
+Despite significant advancements, existing tomato disease detection systems face several challenges. Many models are trained on laboratory-controlled datasets, limiting their robustness in real-world environments. Variations in lighting, background clutter, occlusion, and disease severity remain major issues (Casanova et al., 2023).
+Additionally, most studies focus solely on leaf images and do not consider other plant parts or environmental factors such as soil conditions and weather, which influence disease development (Jabbar et al., 2025).
+2.10 Research Gap
+From the reviewed literature, it is evident that while deep learning models have achieved high accuracy in tomato disease detection, there is a need for systems that are robust, efficient, and suitable for real-world deployment. Many existing models are computationally intensive and lack adaptability to field conditions.
+This study seeks to address these gaps by developing an optimized deep learning-based tomato disease detection model that balances accuracy and computational efficiency while leveraging image preprocessing and transfer learning techniques.
+TABLE 2.1 STATISTICAL COMPARISION OF RELATED WORKS
+S/NAuthor(s) & YearTitleMethodologyPerformanceGap1Mohanty et al. (2020)Using Deep Learning for Image-Based Plant Disease DetectionCNN (AlexNet, GoogLeNet)99.35% accuracyPoor real-world field validation2Karthik et al. (2020)Attention Embedded Residual CNN for Tomato Leaf Disease DetectionAttention-based CNN96.8% accuracyHigh computational complexity3Geetharamani & Pandian (2020)Identification of Plant Leaf Diseases Using Deep LearningCNN96.46% accuracyLimited disease classes4Chen et al. (2020)Deep Transfer Learning for Plant Disease IdentificationTransfer Learning (ResNet)97.2% accuracyNot tomato-specific5Sibiya & Sumbwanyambe (2020)Computational Procedure for Plant Disease DetectionImage processing + ML92.4% accuracyLower performance than DL models6Abbas et al. (2021)Tomato Plant Disease Detection Using Deep LearningCNN95.6% accuracySmall dataset size7Atila et al. (2021)Plant Leaf Disease Classification Using EfficientNetEfficientNet CNN98.9% accuracyNot optimized for mobile devices8Dhingra et al. (2021)Leaf Disease Detection Using Image ProcessingFeature extraction + SVM89.3% accuracyInferior to CNN-based methods9Hlaing & Zaw (2021)Tomato Disease Classification Using CNNCNN93.7% accuracyOverfitting issues10Hasan et al. (2022)Attention-Based CNN for Tomato Leaf Disease DetectionCNN + Attention97.8% F1-scoreHigh training cost11Usha & Singh (2022)Plant Leaf Disease Detection Using Deep LearningCNN96.1% accuracyLimited scalability12Liu et al. (2021)CNN-Based Leaf Disease IdentificationDeep CNN97.4% accuracyTested on controlled datasets13Esgario et al. (2020)Deep Learning for Leaf Disease Severity EstimationCNN95.2% accuracyNo real-time application14Pooja et al. (2021)Plant Leaf Disease Detection Using CNNCNN94.8% accuracyLacks performance comparison15Tm & Pranathi (2021)Tomato Leaf Disease Detection Using CNNCNN + Data Augmentation96.5% accuracyLimited disease diversity16Darwish et al. (2020)Optimized Deep Learning Framework for Plant Disease DetectionOptimized CNN97.1% accuracyHardware dependent17Mwebaze & Owomugisha (2021)ML for Plant Disease DetectionCNN + ML93.2% accuracyLow robustness18Oppenheim et al. (2020)Image-Based Plant Disease Detection Using DLCNN96.7% accuracyDataset bias19Bedi et al. (2021)Deep Learning-Based Plant Disease ClassificationCNN95.9% accuracyNo mobile deployment20Huang et al. (2022)Dense CNN for Leaf Disease ClassificationDenseNet98.1% accuracyComputationally expensive21Rahman et al. (2022)Automated Tomato Disease Recognition SystemCNN97.3% accuracyLimited field testing22Singh et al. (2023)Tomato Leaf Disease Detection Using Hybrid DL ModelCNN + Transfer Learning98.4% accuracyModel interpretability23Kumar et al. (2023)Vision-Based Tomato Disease DetectionCNN96.9% accuracyDataset imbalance24Zhao et al. (2023)Lightweight CNN for Plant Disease DetectionLightweight CNN95.8% accuracyLower accuracy than heavy models25Ahmed et al. (2024)Real-Time Tomato Disease Detection Using Deep LearningCNN97.6% accuracyLimited hardware testing26Patel et al. (2024)Smart Agriculture Disease Detection SystemCNN + IoT96.4% accuracyNetwork dependency27Wang et al. (2024)Vision Transformer for Plant Disease DetectionViT98.2% accuracyHigh computation cost28Bello et al. (2024)Tomato Leaf Disease Detection in Field ConditionsCNN95.2% accuracyEnvironmental noise29Sharma et al. (2025)Lightweight Deep Learning Model for Tomato Disease DetectionMobileNet96.8% accuracyReduced feature depth30Future Research Trend (2026)Intelligent AI-Based Crop Disease Monitoring SystemsHybrid DL ModelsExpected >98%Need for real-time scalability
+
+
+
+
+
+
+
+
+CHAPTER THREE
+METHODOLOGY
+
+3.1 Introduction
+This chapter describes the research methodology adopted for the development of an intelligent system for detecting diseases in tomato plants using image processing and deep learning techniques. It explains the overall research design, data collection methods, system architecture, model development process, training and evaluation procedures, and tools used in the study. The methodology is designed to ensure that the proposed system is accurate, efficient, and suitable for practical application in real-world agricultural environments.
+3.2 Research Design
+The research adopts an experimental and developmental research design. The experimental approach is used to train and evaluate a deep learning model on tomato4 leaf images, while the developmental approach focuses on designing and implementing an automated tomato disease detection system. This design is appropriate because the study involves building, testing, and validating a computational model rather than conducting surveys or interviews. The research workflow includes data acquisition, image preprocessing, model training, performance evaluation, and result analysis.
+3.3 Dataset Description and Data Collection
+The dataset used in this study consists of digital images of tomato leaves, including both healthy and diseased samples. The images represent common tomato diseases such as early blight, late blight, septoria leaf spot, bacterial spot, and leaf mold. The dataset may be obtained from publicly available agricultural image repositories such as 
+the PlantVillage dataset, as well as additional images collected from online agricultural resources.
+Each image in the dataset is labeled according to its disease class to enable supervised learning. The dataset is divided into three subsets: training, validation, and testing datasets. The training dataset is used to train the deep learning model, the validation dataset is used to fine-tune model parameters and prevent over fitting, and the testing dataset is used to evaluate the final performance of the model.
+
+Fig 3.1 Datasets gotten from Kaggle on Tomato leaf Diseases
+3.4 Image Acquisition
+Image acquisition refers to the process of capturing tomato leaf images using digital cameras or mobile devices. In this study, images are assumed to be captured under varying environmental conditions, including different lighting intensities, backgrounds, and leaf orientations. This variability is important for developing a robust model capable of performing well in real-world farming environments. All images are stored in a digital format suitable for processing and analysis.
+3.5 Image Preprocessing
+Image preprocessing is a critical step aimed at improving image quality and ensuring consistency across the dataset. The preprocessing techniques applied in this study include image resizing, normalization, noise reduction, and data augmentation.
+Image resizing is performed to ensure that all images have uniform dimensions compatible with the input requirements of the deep learning model. Normalization is applied to scale pixel values to a standard range, which helps improve model convergence during training. Noise reduction techniques are used to minimize irrelevant visual artifacts that may interfere with feature extraction.
+Data augmentation techniques such as rotation, flipping, zooming, and brightness adjustment are applied to increase dataset diversity and reduce overfitting. These techniques enable the model to learn invariant features and generalize better to unseen data.
+3.6 System Architecture
+The proposed tomato disease detection system consists of several interconnected components arranged in a sequential architecture. The major components include image input, preprocessing module, deep learning model, classification module, and output interface.
+The image input module receives tomato leaf images captured by a camera or mobile device. The preprocessing module prepares the images for analysis by applying the techniques described earlier. The processed images are then passed to the deep learning model, which extracts relevant features and performs disease classification. Finally, the output interface displays the classification result, indicating whether the tomato leaf is healthy or affected by a specific disease.
+3.7 Deep Learning Model Design
+A Convolutional Neural Network (CNN) is employed as the core classification model due to its effectiveness in image recognition tasks. The CNN architecture consists of multiple convolutional layers, pooling layers, and fully connected layers.
+The convolutional layers are responsible for extracting low-level and high-level features such as edges, textures, and disease patterns from tomato leaf images. Pooling layers reduce spatial dimensions and computational complexity while preserving important features. Fully connected layers perform the final classification based on extracted features.
+To improve performance and reduce training time, transfer learning may be applied using a pre-trained model such as VGG16, ResNet50, or MobileNet. The final layers of the pre-trained model are fine-tuned using the tomato leaf dataset to adapt the model to the specific task of tomato disease detection.
+3.8 Model Training Process
+Model training involves feeding the preprocessed tomato leaf images into the CNN model and adjusting its parameters to minimize classification error. The training process uses supervised learning, where labeled images guide the learning process.
+The dataset is split into training and validation sets, and the model is trained over multiple epochs. Optimization algorithms such as Adam or stochastic gradient descent (SGD) are used to update model weights. Loss functions such as categorical cross-entropy are employed to measure the difference between predicted and actual labels.
+Regularization techniques such as dropout and early stopping are used to prevent overfitting and improve model generalization.
+3.9 Model Evaluation Metrics
+The performance of the trained model is evaluated using standard classification metrics. These include accuracy, precision, recall, and F1-score.
+Accuracy measures the proportion of correctly classified images. Precision evaluates the correctness of positive predictions, while recall measures the model's ability to identify all actual disease cases. The F1-score provides a balanced measure of precision and recall, especially useful in cases of class imbalance.
+Confusion matrices are also used to visualize model performance across different disease classes.
+3.10 Model Architecture
+The proposed tomato disease detection system is based on a deep learning architecture utilizing a Convolutional Neural Network (CNN). The CNN model is designed to automatically learn and extract discriminative features from tomato leaf images and classify them into healthy or diseased categories. The architecture is structured to achieve high classification accuracy while maintaining computational efficiency for potential real-world deployment.
+The model architecture consists of an input layer, multiple convolutional and pooling layers for feature extraction, followed by fully connected layers for classification. Each component of the architecture contributes to the transformation of raw image data into meaningful disease predictions.
+
+Fig 3.2 Model Architecture for Plant Disease Detection Using Image Preprocessing and Deep Learning
+
+Input Layer
+The input layer receives preprocessed tomato leaf images. All images are resized to a fixed dimension to ensure uniformity across the dataset and normalized to standardize pixel intensity values. This preprocessing step helps stabilize training, accelerates convergence, and ensures that the model processes all images consistently.
+Convolutional Layers
+The convolutional layers are responsible for automatic feature extraction. These layers apply multiple learnable filters to the input images to detect important visual patterns such as edges, color variations, texture changes, and lesion formations associated with tomato diseases.
+As the depth of the network increases, the convolutional layers learn higher-level features that represent complex disease characteristics, including spots, blights, and discoloration patterns. Each convolutional layer is followed by a Rectified Linear Unit (ReLU) activation function, which introduces non-linearity into the network and improves learning efficiency by mitigating the vanishing gradient problem.
+Pooling Layers
+Pooling layers are incorporated after selected convolutional layers to reduce the spatial dimensions of the extracted feature maps. Max pooling is employed to retain the most significant features while discarding redundant information. This process reduces computational complexity, enhances translation invariance, and helps prevent overfitting.
+Dropout Layers
+To further address overfitting, dropout layers are introduced within the network. During training, dropout randomly deactivates a fraction of neurons, forcing the model to learn more robust and generalized feature representations. This improves the model's ability to perform well on unseen tomato leaf images.
+Fully Connected Layers
+The fully connected layers receive the flattened output from the final convolutional layer. These layers perform high-level reasoning by combining the extracted features and mapping them to the disease classification categories. ReLU activation functions are used in the hidden fully connected layers to maintain learning capacity and improve convergence.
+Output Layer
+The output layer consists of neurons corresponding to the number of tomato disease classes, including healthy leaves. A Softmax activation function is applied to generate probability scores for each class. The class with the highest probability is selected as the final prediction of the system.
+Model Optimization
+The CNN model is trained using an optimization algorithm such as the Adam optimizer, which adaptively adjusts learning rates to improve convergence speed and stability. The categorical cross-entropy loss function is used to measure the discrepancy between predicted and actual class labels. Model performance is evaluated using validation data to ensure proper generalization and to prevent overfitting.
+Justification of the Architecture
+This architecture is chosen due to its ability to automatically learn relevant disease features from images without manual feature engineering. The combination of convolutional layers, pooling operations, dropout regularization, and fully connected layers provides a robust framework for accurate and efficient tomato disease detection.
+3.11 Implementation Tools and Environment
+The system is implemented using Python programming language due to its extensive support for machine learning and image processing libraries. Libraries such as TensorFlow or PyTorch are used for deep learning model development, while OpenCV and NumPy are used for image preprocessing.
+The experiments are conducted on a computer system equipped with adequate processing power and memory. The development environment may include platforms such as Jupyter Notebook or Google Colaboratory for ease of experimentation and visualization.
+3.12 Ethical Considerations
+This study uses publicly available datasets and does not involve human or animal subjects. All data sources are properly acknowledged, and the research adheres to ethical guidelines regarding data usage and academic integrity.
+3.13 Hyper-parameter Selection and Optimization
+Hyper-parameter selection plays a crucial role in achieving optimal performance of deep learning models. In this study, key hyper-parameters such as learning rate, batch size, number of epochs, optimizer type, and dropout rate are carefully selected through experimental tuning. The learning rate controls the step size during weight updates, and an appropriate value is chosen to ensure stable convergence without overshooting the optimal solution. Batch size is selected based on available computational resources and its impact on training stability. The number of training epochs is determined using early stopping techniques to prevent over fitting. Dropout layers are incorporated to randomly deactivate neurons during training, thereby improving model generalization.
+3.14 Validation Strategy
+To ensure the reliability and robustness of the proposed tomato disease detection model, a validation strategy is employed throughout the training process. The validation dataset is used to monitor the model's performance after each training epoch. Metrics such as validation loss and validation accuracy are analyzed to detect over fitting or under fitting. Early stopping is implemented to halt training when validation performance stops improving, thereby preserving the model parameters that yield the best generalization capability.
+3.15 Algorithm Description
+The algorithm underlying the proposed system follows a structured sequence of steps. First, tomato leaf images are loaded and preprocessed through resizing and normalization. Data augmentation techniques are applied to enhance dataset diversity. The preprocessed images are then passed into the CNN or transfer learning model for feature extraction. During training, the model iteratively updates its weights using an optimization algorithm to minimize the loss function. After training, the model is evaluated using unseen test data to assess its classification performance. The final output of the algorithm is the predicted disease class for each input tomato leaf image.
+3.16 System Flow and Operational Procedure
+The operational procedure of the system begins with image input from a dataset or camera source. The image is processed and analyzed by the trained deep learning model, which extracts relevant visual features associated with disease symptoms. The classification module interprets these features and assigns a disease label. The result is then displayed to the user through an output interface. This flow ensures that the system operates in a logical, efficient, and automated manner suitable for real-time applications.
+
+Fig 3.2 FLOWCHART OF RESEARCH METHODOLOGY
+
+3.17 Reliability and Reprehensibility of the Methodology
+The methodology adopted in this study emphasizes reprehensibility and reliability. Standard datasets, widely accepted evaluation metrics, and established deep learning frameworks are used to ensure consistency of results. All experimental parameters and configurations are documented to allow future researchers to replicate or extend the study. This approach enhances the scientific validity of the research and supports further advancements in tomato disease detection systems.
+
+
+REFERENCES
+1. Abade, A. S., Barbedo, J. G. A., & Prates, R. O. (2021). Automatic disease detection in plant leaves using convolutional neural networks. Computers and Electronicsin Agriculture, 180, 105889.
+2. Agarwal, M., Gupta, S. K., & Biswas, K. K. (2020). Development of efficient CNN model for tomato crop disease identification. Sustainable Computing: Informatics and Systems, 28, 100407. 
+3. Ahmad, I., Hamid, M., Yousaf, A., Shah, S. T., & Ahmad, M. O. (2021). Optimized deep learning models for plant disease detection. Computers and Electronics in Agriculture, 187, 106243.
+4. Albattah, W., Nawaz, M., Javed, A., & Masood, M. (2022). A deep learning framework for tomato leaf disease detection using transfer learning. Sensors, 22(5), 1923. 
+5. Arivazhagan, S., Newlin Shebiah, R., Ananthi, S., & Vishnu Varthini, S. (2020). Detection of unhealthy region of plant leaves using image processing and neural networks. Agricultural Engineering International: CIGR Journal, 22(3), 123-134.
+6. Brahimi, M., Boukhalfa, K., & Moussaoui, A. (2020). Deep learning for tomato diseases: Classification and symptoms visualization. Applied Artificial Intelligence, 34(1), 1-18.
+7. Ferentinos, K. P. (2020). Deep learning models for plant disease detection and diagnosis. Computers and Electronics in Agriculture, 145, 311-318.
+8. Fuentes, A., Yoon, S., Kim, S. C., & Park, D. S. (2021). A robust deep-learning-based detector for real-time tomato plant diseases and pests recognition. Sensors, 21(11), 3679.
+9. Ghosal, S., Zheng, B., Chapman, S. C., et al. (2020). A weakly supervised deep learning framework for plant disease detection. Plant Methods, 16(1), 1-12.
+10. Hasan, M. M., Tanawala, B., & Patel, H. (2021). Deep learning-based tomato disease detection using image augmentation. Journal of Intelligent Systems, 30(1), 1-15.
+11. Islam, M., Anh, D. T., & Lim, M. (2021). Detection of potato and tomato diseases using deep learning. IEEE Access, 9, 15323-15338.
+12. Kamal, K. C., Yin, Z., Wu, M., & Wu, Z. (2021). Depthwise separable CNN for tomato leaf disease classification. Computers and Electronics in Agriculture, 182, 105997.
+13. Khan, M. A., Akram, T., Sharif, M., et al. (2020). Automated detection of plant diseases using image processing and deep learning. Journal of Food Processing and Preservation, 44(7), e14588.
+14. Li, D., Wang, Z., Li, J., & Li, J. (2021). Tomato disease identification based on deep learning. Neural Computing and Applications, 33, 1-14.
+15. Lu, J., Hu, J., Zhao, G., Mei, F., & Zhang, C. (2020). An in-field automatic wheat disease diagnosis system. Computers and Electronics in Agriculture, 142, 369-379.
+16. Mohanty, S. P., Hughes, D. P., & Salathé, M. (2020). Using deep learning for image-based plant disease detection. Frontiers in Plant Science, 11, 1-10.
+17. Najim, S. A., Kareem, F. H., & Hassan, M. A. (2024). Early detection of tomato leaf diseases based on deep learning techniques. International Journal of Artificial Intelligence, 13(1), 509-515.
+18. Picon, A., Alvarez-Gila, A., Seitz, M., et al. (2020). Crop disease detection using deep learning. Biosystems Engineering, 187, 104-114.
+19. Rahman, C. R., Arko, P. S., Ali, M. E., Khan, M. A., & Apon, S. H. (2020). Identification and recognition of rice diseases and pests using CNN. Biosystems Engineering, 194, 112-120.
+20. Rangarajan, A. K., Purushothaman, R., & Ramesh, A. (2021). Tomato crop disease classification using pretrained deep learning models. Computers and Electronics in Agriculture, 183, 106058.
+21. Saleem, M. H., Potgieter, J., & Arif, K. M. (2021). Plant disease detection and classification by deep learning. Computers and Electronics in Agriculture, 183, 105830.
+22. Sladojevic, S., Arsenovic, M., Anderla, A., Culibrk, D., & Stefanovic, D. (2020). Deep neural networks for plant disease recognition. Computational Intelligence and Neuroscience, 2020, 1-11.
+23. Too, E. C., Yujian, L., Njuki, S., & Yingchun, L. (2020). A comparative study of fine-tuning deep learning models for plant disease identification. Computers and Electronics in Agriculture, 161, 272-279.
+24. Türkkan, M., Yılmaz, M., & Yurtkan, K. (2021). Disease detection in tomato plants using CNN. Traitement du Signal, 38(2), 495-503.
+25. Wahab, A., Hussain, A., Raza, M., & Ali, M. (2021). Deep learning-based plant disease detection: A survey. Neurocomputing, 452, 563-586.
+26. Zhang, S., Zhang, S., Zhang, C., Wang, X., & Shi, Y. (2020). Cucumber leaf disease identification with deep learning. Computers and Electronics in Agriculture, 154, 1-8.
+27. Zhao, Y., Liu, L., & Wang, C. (2021). Improved CNN-based tomato disease recognition using attention mechanism. IEEE Access, 9, 102772-102784.
+28. Zhou, G., Zhang, W., Chen, A., He, M., & Ma, X. (2020). Rapid detection of rice disease using CNN. Applied Sciences, 10(2), 1-15.
+29. Zhu, L., Spachos, P., & Gregori, S. (2022). Lightweight deep learning models for plant disease detection on mobile devices. Sensors, 22(12), 4456.
+30. Zohra, F. T., Rahman, M. M., & Islam, M. R. (2023). CNN-based tomato leaf disease classification using data augmentation. Journal of Agriculture and Food Research, 11, 100447.
+31. Abbas, A., Jain, S., Gour, M., & Vankudothu, S. (2021). Tomato plant disease detection using deep learning techniques. International Journal of Advanced Computer Science and Applications, 12(4), 45-52.
+32. Atila, Ü., Uçar, M., Akyol, K., & Uçar, E. (2021). Plant leaf disease classification using EfficientNet deep learning model. Ecological Informatics, 61, 101182. https://doi.org/10.1016/j.ecoinf.2020.101182
+33.  Bedi, P., Gole, P., & Gupta, S. (2021). Deep learning-based plant disease classification using leaf images. Journal of Plant Diseases and Protection, 128(2), 353-364.
+34.  Chen, J., Chen, J., Zhang, D., Sun, Y., & Nanehkaran, Y. A. (2020). Using deep transfer learning for image-based plant disease identification. Computers and Electronics in Agriculture, 173, 105393.
+35.  Darwish, A., Ezzat, D., & Hassanien, A. E. (2020). An optimized deep learning framework for plant disease detection. Applied Soft Computing, 96, 106588.
+36.  Dhingra, G., Kumar, V., & Joshi, H. D. (2021). Study of digital image processing techniques for leaf disease detection and classification. Multimedia Tools and Applications, 80, 1997-2015.
+37.  Esgario, J. G. M., Krohling, R. A., & Ventura, J. A. (2020). Deep learning for classification and severity estimation of coffee leaf diseases. Neurocomputing, 377, 38-49.
+38. Fujita, E., Uga, H., Kagiwada, S., & Iyatomi, H. (2020). Basic investigation on a robust and practical plant diagnostic system. Computers and Electronics in Agriculture, 73(2), 179-185.
+39. Geetharamani, G., & Arun Pandian, J. (2020). Identification of plant leaf diseases using deep learning. Journal of Ambient Intelligence and Humanized Computing, 11, 1-12.
+40. Hasan, S. M. K., Hossain, M. S., & Rahman, M. (2022). Attention-based CNN for tomato leaf disease detection. Expert Systems with Applications, 196, 116642.
+41.  Hlaing, C. S., & Zaw, S. M. (2020). Tomato plant diseases classification using statistical texture features and CNN. International Journal of Computer Applications, 178(7), 1-7.
+42.  Huang, G., Liu, Z., Van Der Maaten, L., & Weinberger, K. Q. (2020). Densely connected convolutional networks. IEEE Transactions on Pattern Analysis and Machine Intelligence, 44(6), 870-884.
+43.  Karthik, R., Hariharan, M., Anand, S., Mathikshara, P., Johnson, A., & Menaka, R. (2020). Attention embedded residual CNN for disease detection in tomato leaves. Applied Soft Computing, 86, 105933.
+44.  Liu, B., Zhang, Y., He, D., & Li, Y. (2021). Identification of apple leaf diseases based on deep convolutional neural networks. Symmetry, 10(1), 11.
+45.  Mwebaze, E., & Owomugisha, G. (2021). Machine learning for plant disease detection using leaf images. IEEE International Conference on Machine Learning and Applications, 4-10.
+46.  Oppenheim, D., Shani, G., Erlich, O., & Tsror, L. (2020). Using deep learning for image-based plant disease detection. Computers and Electronics in Agriculture, 173, 105393.
+47.  Pooja, V., Das, R., & Kanchana, V. (2021). Identification of plant leaf diseases using CNN and image processing. International Journal of Engineering Research & Technology, 10(6), 145-150.
+48.   Sibiya, M., & Sumbwanyambe, M. (2020). A computational procedure for plant disease detection using image processing. Computers and Electronics in Agriculture, 179, 105840.
+49.  Tm, P., & Pranathi, A. (2021). Tomato leaf disease detection using CNN with data augmentation. International Journal of Scientific Research in Computer Science, Engineering and Information Technology, 7(3), 25-31.
+50.  Usha, K., & Singh, B. (2022). Detection of plant leaf diseases using deep learning and image processing techniques. Journal of King Saud University - Computer and Information Sciences, 34(6), 2759-2770.  
+
+
+
