@@ -5,7 +5,10 @@
       "Bash(gh api *)",
       "Bash(git rm *)",
       "Bash(dir reports *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git fetch *)"
     ]
   }
 }
