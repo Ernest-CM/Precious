@@ -1,0 +1,17 @@
+data/raw/
+data/prepared/
+data/field/
+data/*.zip
+models/*.h5
+models/*.keras
+models/*.tflite
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.kaggle/
+.env
+.venv/
+.idea/
+.vscode/
+~$*
+*.tmp

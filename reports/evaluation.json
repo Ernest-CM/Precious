@@ -1,0 +1,23 @@
+{
+  "field_kind": "real",
+  "splits": {
+    "controlled": {
+      "accuracy": 0.9229808492922564,
+      "precision_macro": 0.9070935058972533,
+      "recall_macro": 0.912601469170234,
+      "f1_macro": 0.9051503166599979,
+      "precision_weighted": 0.9274581106882441,
+      "recall_weighted": 0.9229808492922564,
+      "f1_weighted": 0.9226160468024205
+    },
+    "field": {
+      "accuracy": 0.614,
+      "precision_macro": 0.6784657946490539,
+      "recall_macro": 0.6140000000000001,
+      "f1_macro": 0.6160971986016677,
+      "precision_weighted": 0.6784657946490537,
+      "recall_weighted": 0.614,
+      "f1_weighted": 0.6160971986016677
+    }
+  }
+}

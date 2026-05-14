@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-05-14T09:06:55",
+  "duration_seconds": 890.3,
+  "counts": {
+    "train": 11208,
+    "val": 2401,
+    "test_controlled": 2402,
+    "test_field": 500
+  },
+  "field_kind": "real",
+  "final_val_accuracy": 0.7126197218894958
+}

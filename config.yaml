@@ -1,0 +1,51 @@
+image:
+  size: 224
+  channels: 3
+
+training:
+  batch_size: 32
+  epochs_head: 10
+  epochs_finetune: 6
+  learning_rate_head: 1.0e-3
+  learning_rate_finetune: 1.0e-5
+  finetune_from_layer: 100
+  dropout: 0.4
+  dense_units: 256
+  early_stopping_patience: 5
+
+splits:
+  train: 0.70
+  val: 0.15
+  test_controlled: 0.10
+  test_field: 0.05
+
+paths:
+  raw_dataset: data/raw/PlantVillage
+  field_dataset: data/field
+  prepared_root: data/prepared
+  models: models
+  reports: reports
+
+classes:
+  - Tomato___Bacterial_spot
+  - Tomato___Early_blight
+  - Tomato___Late_blight
+  - Tomato___Leaf_Mold
+  - Tomato___Septoria_leaf_spot
+  - Tomato___Spider_mites_Two-spotted_spider_mite
+  - Tomato___Target_Spot
+  - Tomato___Tomato_Yellow_Leaf_Curl_Virus
+  - Tomato___Tomato_mosaic_virus
+  - Tomato___healthy
+
+class_display:
+  Tomato___Bacterial_spot: Bacterial Spot
+  Tomato___Early_blight: Early Blight
+  Tomato___Late_blight: Late Blight
+  Tomato___Leaf_Mold: Leaf Mold
+  Tomato___Septoria_leaf_spot: Septoria Leaf Spot
+  Tomato___Spider_mites_Two-spotted_spider_mite: Spider Mite Damage
+  Tomato___Target_Spot: Target Spot
+  Tomato___Tomato_Yellow_Leaf_Curl_Virus: Yellow Leaf Curl Virus
+  Tomato___Tomato_mosaic_virus: Tomato Mosaic Virus
+  Tomato___healthy: Healthy

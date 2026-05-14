@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh repo *)",
+      "Bash(gh api *)",
+      "Bash(git rm *)",
+      "Bash(dir reports *)",
+      "Bash(git add *)"
+    ]
+  }
+}
